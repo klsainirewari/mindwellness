@@ -15,9 +15,8 @@
     <script>
       // Global Error Handler
       window.onerror = function(message, source, lineno, colno, error) {
-        const errorContainer = document.getElementById('root') || document.body;
-        // Don't overwrite if root already has content, just log it unless it's critical
         console.error("Global Error:", message);
+        document.body.innerHTML += '<div style="color:red; padding:20px;"><h1>Error Loading Site</h1><p>' + message + '</p></div>';
       };
 
       // Polyfill for process.env
@@ -47,7 +46,7 @@
       }
     </script>
     
-    <!-- ✅ CORRECT IMPORT MAP (React 18 ONLY) -->
+    <!-- ✅ CORRECT IMPORT MAP (React 18 ONLY - CLEANED) -->
     <script type="importmap">
 {
   "imports": {
