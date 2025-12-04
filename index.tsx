@@ -3,16 +3,10 @@ import { createRoot } from "react-dom/client";
 import { GoogleGenAI } from "@google/genai";
 
 // ==================================================================================
-// 🔑 API KEY CONFIGURATION (YAHAN APNI KEY DALEIN)
-// ==================================================================================
-// 1. Google AI Studio se Key lein: https://aistudio.google.com/app/apikey
-// 2. Niche "YAHA_KEY_PASTE_KAREIN" ko hatakar apni Key paste karein inside quotes.
-//    Example: const API_KEY = "AIzaSyCuevq1tKjbPOp84ZH8joHhF3bvZHEODq8";
-// 3. Security ke liye: https://console.cloud.google.com/apis/credentials par jakar
-//    Key ko restrict karein -> Websites -> https://klsainirewari.github.io/*
+// 🔑 API KEY CONFIGURATION
 // ==================================================================================
 
-const API_KEY = "AIzaSyCuevq1tKjbPOp84ZH8joHhF3bvZHEODq8; 
+// API Key is now obtained from process.env.API_KEY as per guidelines.
 
 // ==================================================================================
 
@@ -416,16 +410,16 @@ const ChatWidget = () => {
   const chatSessionRef = useRef<any>(null);
 
   useEffect(() => {
-    // Check if user has replaced the placeholder
-    if (API_KEY === "YAHA_KEY_PASTE_KAREIN" || API_KEY === "") {
-        console.warn("API Key is missing. Please edit index.tsx and add your key.");
+    // Check if API key is present
+    if (!process.env.API_KEY) {
+        console.warn("API Key is missing. Please check your environment variables.");
         setError(true);
         return;
     }
 
     try {
       if (!aiRef.current) {
-        aiRef.current = new GoogleGenAI({ apiKey: API_KEY });
+        aiRef.current = new GoogleGenAI({ apiKey: process.env.API_KEY });
         chatSessionRef.current = aiRef.current.chats.create({
           model: 'gemini-2.5-flash',
           config: {
