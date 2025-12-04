@@ -39,6 +39,9 @@ const Icons = {
   ),
   Family: () => (
     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+  ),
+  Key: () => (
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11.536 16 10.5 17.5 7.5 14.5 6 16l-3.5 3.5M16 5a6 6 0 00-6 6v0.5a.5.5 0 01-.5.5 3 3 0 01-2.5-1.5M16 5a2 2 0 00-2 2v1" /></svg>
   )
 };
 
@@ -393,27 +396,46 @@ const ChatWidget = () => {
     { id: 'init', role: 'model', text: "Hello! I am Dr. Saini's Virtual Assistant. How are you feeling today?" }
   ]);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
   const aiRef = useRef<any>(null);
   const chatSessionRef = useRef<any>(null);
 
+  // Initialize AI - Developer must set process.env.API_KEY
   useEffect(() => {
-    if (!aiRef.current) {
-      aiRef.current = new GoogleGenAI({ apiKey: process.env.API_KEY });
-      chatSessionRef.current = aiRef.current.chats.create({
-        model: 'gemini-2.5-flash',
-        config: {
-          systemInstruction: "You are a friendly Psychiatric Assistant Bot for Dr. Vijender Saini. Start answers with 'I am an AI, not a doctor.' Use Google Search grounding.",
-          tools: [{ googleSearch: {} }],
-        }
-      });
+    try {
+      if (process.env.API_KEY && !aiRef.current) {
+        aiRef.current = new GoogleGenAI({ apiKey: process.env.API_KEY });
+        chatSessionRef.current = aiRef.current.chats.create({
+          model: 'gemini-2.5-flash',
+          config: {
+            systemInstruction: "You are a friendly Psychiatric Assistant Bot for Dr. Vijender Saini. Start answers with 'I am an AI, not a doctor.' Use Google Search grounding.",
+            tools: [{ googleSearch: {} }],
+          }
+        });
+      }
+    } catch (e) {
+      console.error("AI Initialization Failed", e);
+      setError(true);
     }
+  }, []);
+
+  useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
   const handleSend = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim() || isLoading) return;
+    
+    // Check if API key was loaded
+    if (!chatSessionRef.current) {
+      setMessages(prev => [...prev, { id: Date.now().toString(), role: 'user', text: input }]);
+      setError(true);
+      setInput("");
+      return;
+    }
+
     const userText = input.trim();
     setInput("");
     setMessages(prev => [...prev, { id: Date.now().toString(), role: 'user', text: userText }]);
@@ -433,7 +455,8 @@ const ChatWidget = () => {
         sources: sources.filter((v,i,a)=>a.findIndex(v2=>(v2.uri===v.uri))===i)
       }]);
     } catch (error) {
-      setMessages(prev => [...prev, { id: Date.now().toString(), role: 'model', text: "Connection error. Please try again." }]);
+      setMessages(prev => [...prev, { id: Date.now().toString(), role: 'model', text: "I'm having trouble connecting right now. Please try WhatsApp." }]);
+      setError(true);
     } finally {
       setIsLoading(false);
     }
@@ -448,10 +471,12 @@ const ChatWidget = () => {
         <div>
           <h3 className="text-white font-bold text-lg">MindWellness AI</h3>
           <p className="text-gray-400 text-xs flex items-center gap-2">
-            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span> Online Now
+            <span className={`w-2 h-2 rounded-full ${error ? 'bg-red-500' : 'bg-green-500 animate-pulse'}`}></span> 
+            {error ? 'Offline' : 'Online Now'}
           </p>
         </div>
       </div>
+      
       <div className="flex-grow p-6 overflow-y-auto space-y-4 bg-slate-50 scrollbar-thin">
         {messages.map((msg) => (
           <div key={msg.id} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
@@ -472,16 +497,30 @@ const ChatWidget = () => {
             </div>
           </div>
         ))}
+        
+        {/* Fallback Error Card */}
+        {error && (
+           <div className="bg-red-50 border border-red-100 p-4 rounded-xl text-center">
+              <p className="text-red-800 font-bold mb-2">Chat Service Unavailable</p>
+              <p className="text-red-600 text-xs mb-4">Please contact Dr. Saini directly via WhatsApp.</p>
+              <a href="https://wa.me/919785712712" target="_blank" className="inline-flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-green-600 transition">
+                 <Icons.WhatsApp /> Chat on WhatsApp
+              </a>
+           </div>
+        )}
+
         {isLoading && <div className="text-gray-400 text-xs ml-4">Thinking...</div>}
         <div ref={chatEndRef} />
       </div>
+      
       <form onSubmit={handleSend} className="p-4 bg-white border-t border-gray-100 flex gap-2">
         <input 
           value={input} onChange={(e) => setInput(e.target.value)} 
-          placeholder="Ask a question..." 
-          className="flex-grow px-4 py-3 bg-slate-50 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500" 
+          placeholder={error ? "Chat disabled" : "Ask a question..."}
+          disabled={error}
+          className="flex-grow px-4 py-3 bg-slate-50 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 disabled:bg-gray-100 disabled:cursor-not-allowed" 
         />
-        <button type="submit" disabled={isLoading} className="bg-teal-600 text-white p-3 rounded-xl hover:bg-teal-700 transition"><Icons.Send /></button>
+        <button type="submit" disabled={isLoading || error} className="bg-teal-600 text-white p-3 rounded-xl hover:bg-teal-700 transition disabled:bg-gray-300 disabled:cursor-not-allowed"><Icons.Send /></button>
       </form>
     </div>
   );
