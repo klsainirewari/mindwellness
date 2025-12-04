@@ -3,12 +3,21 @@ import { createRoot } from "react-dom/client";
 import { GoogleGenAI } from "@google/genai";
 
 // ==================================================================================
-// 🔑 API KEY CONFIGURATION
+// 🔑 GITHUB PAGES CONFIGURATION (EDIT THIS AREA)
 // ==================================================================================
 
-// API Key is now obtained from process.env.API_KEY as per guidelines.
+// Paste your Google Gemini API Key inside the quotes below:
+const GITHUB_PAGES_API_KEY = "AIzaSyCuevq1tKjbPOp84ZH8joHhF3bvZHEODq8"; 
 
 // ==================================================================================
+
+// Setup process.env for GitHub Pages
+if (typeof process === 'undefined') {
+  (window as any).process = { env: {} };
+}
+if (!process.env.API_KEY && GITHUB_PAGES_API_KEY) {
+  process.env.API_KEY = GITHUB_PAGES_API_KEY;
+}
 
 // --- Icons (SVG Components) ---
 const Icons = {
@@ -410,9 +419,9 @@ const ChatWidget = () => {
   const chatSessionRef = useRef<any>(null);
 
   useEffect(() => {
-    // Check if API key is present
+    // Check if API key is present in process.env
     if (!process.env.API_KEY) {
-        console.warn("API Key is missing. Please check your environment variables.");
+        console.warn("API Key is missing.");
         setError(true);
         return;
     }
@@ -517,7 +526,7 @@ const ChatWidget = () => {
         {error && (
            <div className="bg-red-50 border border-red-100 p-4 rounded-xl text-center">
               <p className="text-red-800 font-bold mb-2">Chat Service Unavailable</p>
-              <p className="text-red-600 text-xs mb-4">Please contact Dr. Saini directly via WhatsApp.</p>
+              <p className="text-red-600 text-xs mb-4">Chat is currently offline (API Key missing). Please contact Dr. Saini directly via WhatsApp.</p>
               <a href="https://wa.me/919785712712" target="_blank" className="inline-flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-green-600 transition">
                  <Icons.WhatsApp /> Chat on WhatsApp
               </a>
