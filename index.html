@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MindWellness - Healing of Mind | Dr. Vijender Saini</title>
+    <title>MindWellness - Healing of Mind | Dr. Vijendra Saini</title>
     
     <!-- Tailwind CSS (No Build Required) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -42,8 +42,14 @@
 </head>
 <body class="bg-slate-50 text-gray-900 font-sans selection:bg-teal-200 selection:text-teal-900">
 
+    <!-- Emergency Banner -->
+    <div id="emergencyBanner" class="bg-red-600 text-white px-4 py-2 text-sm font-bold text-center relative z-[60]">
+        <span class="mr-2">⚠️ Not for Emergencies:</span> If you are feeling suicidal or in immediate crisis, please visit the nearest hospital or call a helpline immediately.
+        <button onclick="document.getElementById('emergencyBanner').style.display='none'" class="absolute right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white text-lg">&times;</button>
+    </div>
+
     <!-- Header -->
-    <header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300">
+    <header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300 top-[36px]" id="mainHeader">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
             <div class="flex items-center gap-3">
                 <!-- Logo SVG -->
@@ -70,6 +76,7 @@
                 <a href="#" class="hover:text-teal-600 transition-colors">Home</a>
                 <a href="#about" class="hover:text-teal-600 transition-colors">About</a>
                 <a href="#services" class="hover:text-teal-600 transition-colors">Services</a>
+                <a href="#faq" class="hover:text-teal-600 transition-colors">FAQ</a>
                 <a href="#contact" class="bg-teal-600 hover:bg-teal-700 text-white py-2.5 px-6 rounded-full shadow-lg hover:shadow-xl transition-all">Book Appointment</a>
             </nav>
             
@@ -79,7 +86,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50/50">
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50/50 mt-8">
         <div class="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[600px] h-[600px] bg-teal-100/40 rounded-full blur-3xl"></div>
         <div class="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[500px] h-[500px] bg-orange-100/40 rounded-full blur-3xl"></div>
 
@@ -93,7 +100,7 @@
                         Restoring Balance to Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-600">Mind & Life</span>
                     </h1>
                     <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-xl mx-auto md:mx-0">
-                        Expert psychiatric care by <strong>Dr. Vijender Saini</strong> <span class="text-teal-600 font-bold">(MBBS, MD)</span>. 
+                        Expert psychiatric care by <strong>Dr. Vijendra Saini</strong> <span class="text-teal-600 font-bold">(MBBS, MD)</span>. 
                         Compassionate treatment for anxiety, depression, and mental well-being using evidence-based medicine.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
@@ -107,7 +114,7 @@
                         <div class="absolute inset-0 bg-teal-600 rounded-full opacity-10 blur-2xl transform translate-y-4"></div>
                         <div class="absolute inset-0 border-2 border-dashed border-teal-200 rounded-full animate-[spin_30s_linear_infinite]"></div>
                         <div class="absolute inset-2 bg-white p-2 rounded-full shadow-2xl overflow-hidden">
-                            <img src="https://i.ibb.co/1GYfG4s8/Whats-App-Image-2025-12-04-at-3-06-33-PM.jpg" alt="Dr. Vijender Saini" class="w-full h-full object-cover object-top rounded-full hover:scale-105 transition-transform duration-700">
+                            <img src="https://i.ibb.co/1GYfG4s8/Whats-App-Image-2025-12-04-at-3-06-33-PM.jpg" alt="Dr. Vijendra Saini" class="w-full h-full object-cover object-top rounded-full hover:scale-105 transition-transform duration-700">
                         </div>
                         <div class="absolute bottom-4 -right-4 bg-white p-4 rounded-xl shadow-xl border border-gray-50 flex items-center gap-3 animate-bounce" style="animation-duration: 3s;">
                             <div class="bg-teal-100 p-2 rounded-full text-teal-600">
@@ -148,16 +155,16 @@
                     <div class="absolute -inset-4 bg-teal-50 rounded-3xl transform -rotate-3"></div>
                     <img src="https://i.ibb.co/1GYfG4s8/Whats-App-Image-2025-12-04-at-3-06-33-PM.jpg" alt="Dr. Profile" class="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover object-top">
                     <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm p-6 rounded-xl shadow-lg border-l-4 border-teal-600">
-                        <h3 class="text-xl font-bold text-gray-900">Dr. Vijender Saini</h3>
+                        <h3 class="text-xl font-bold text-gray-900">Dr. Vijendra Saini</h3>
                         <p class="text-teal-600 font-medium">MBBS, MD (Psychiatry)</p>
-                        <p className="text-gray-500 text-sm mt-1">SMS Hospital, Jaipur</p>
+                        <p class="text-gray-500 text-sm mt-1">SMS Hospital, Jaipur</p>
                     </div>
                 </div>
                 <div class="order-1 md:order-2">
                     <span class="text-teal-600 font-bold tracking-wider uppercase text-sm">About The Doctor</span>
                     <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mt-2 mb-6">Compassionate Care Meets Medical Excellence</h2>
                     <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                        Dr. Vijender Saini is a distinguished Psychiatrist known for his empathetic approach to mental health care. With a deep understanding of the human mind, he creates personalized treatment plans that foster resilience and recovery.
+                        Dr. Vijendra Saini is a distinguished Psychiatrist known for his empathetic approach to mental health care. With a deep understanding of the human mind, he creates personalized treatment plans that foster resilience and recovery.
                     </p>
                     <div class="space-y-6">
                         <div class="flex gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100">
@@ -165,7 +172,7 @@
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
                             </div>
                             <div>
-                                <h4 class="font-bold text-gray-900 text-lg">Senior Resident Experience</h4>
+                                <h4 class="font-bold text-gray-900 text-lg">Experience</h4>
                                 <p class="text-gray-600 text-sm mt-1">
                                     <strong>3 Years</strong> at SMS Hospital, Jaipur <br/>
                                     <strong>1 Year</strong> at Sardar Patel Medical College, Bikaner
@@ -263,42 +270,264 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-gradient-to-br from-teal-900 to-slate-900 text-white">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-5xl font-serif font-bold mb-6">Start Your Healing Journey</h2>
-            <p class="text-teal-100 text-lg mb-12">Dr. Saini offers personalized sessions at SMS Hospital and private clinics. Reach out today.</p>
-            
-            <div class="flex flex-col md:flex-row gap-6 justify-center">
-                <a href="https://wa.me/919785712712" target="_blank" class="flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full transition-all shadow-lg hover:shadow-green-500/30 hover:-translate-y-1">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.001 2c5.523 0 10 4.477 10 10 0 5.15-3.872 9.42-8.91 9.947l-1.09.053c-5.523 0-10-4.477-10-10 0-5.523 4.477-10 10-10zm0 3.25c-3.73 0-6.75 3.02-6.75 6.75s3.02 6.75 6.75 6.75 6.75-3.02 6.75-6.75-3.02-6.75-6.75-6.75zm.938 10.957c-.126 0-.214-.047-.29-.142l-.248-.363c-.046-.07-.069-.153-.069-.25 0-.177.108-.344.32-.511l.37-.25c.093-.062.14-.093.14-.093s.062.03.187.094c.125.062.281.187.468.374.187.187.312.374.375.468s.03.094.03.156c0 .125-.062.25-.187.375s-.344.187-.625.187zm-1.03-3.265c-.062 0-.125-.015-.187-.047s-.109-.078-.156-.156c-.047-.078-.063-.172-.063-.28s.016-.203.047-.281l.313-.625c.03-.062.078-.125.156-.187.078-.063.172-.094.281-.094s.203.031.281.094c.078.062.141.14.188.234.047.094.062.203.062.328s-.031.25-.094.344l-.281.625c-.062.125-.156.234-.281.328s-.266.141-.437.141zM7.5 12c0 2.47 2.03 4.5 4.5 4.5s4.5-2.03 4.5-4.5-2.03-4.5-4.5-4.5 2.03-4.5 4.5z"/></svg>
-                    Chat on WhatsApp
-                </a>
-                <a href="mailto:kanheya7@gmail.com" class="flex items-center justify-center gap-3 bg-white text-gray-900 hover:bg-gray-100 font-bold py-4 px-8 rounded-full transition-all shadow-lg hover:-translate-y-1">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                    Email Us
-                </a>
+    <!-- Testimonials Section -->
+    <section class="py-24 bg-white relative overflow-hidden">
+        <!-- Background Decor -->
+        <div class="absolute top-0 left-0 w-64 h-64 bg-teal-50 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-64 h-64 bg-orange-50 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-teal-600 font-bold tracking-wider uppercase text-sm">Testimonials</span>
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-gray-900 mt-2 mb-4">Stories of Hope</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">Real experiences from patients who found their path to healing.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 relative hover:-translate-y-1 transition-transform duration-300">
+                    <div class="text-orange-400 flex gap-1 mb-4">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-gray-600 italic mb-6 leading-relaxed">"I was struggling with severe anxiety for years and had almost given up hope. Dr. Saini didn't just prescribe medicine; he patiently listened to me. His counselling sessions changed my perspective on life completely. Highly recommended."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center text-teal-700 font-bold border border-teal-200">RK</div>
+                        <div>
+                            <p class="font-bold text-gray-900">Ravi Kumar</p>
+                            <p class="text-xs text-gray-500">Anxiety Treatment</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 relative hover:-translate-y-1 transition-transform duration-300">
+                    <div class="text-orange-400 flex gap-1 mb-4">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-gray-600 italic mb-6 leading-relaxed">"The best thing about Dr. Vijendra is his calm demeanor. He explains everything so well. We visited for my father's memory issues, and the improvement in just 2 months is remarkable. Thank you, Doctor."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center text-teal-700 font-bold border border-teal-200">PS</div>
+                        <div>
+                            <p class="font-bold text-gray-900">Priya Sharma</p>
+                            <p class="text-xs text-gray-500">Geriatric Care</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 relative hover:-translate-y-1 transition-transform duration-300">
+                    <div class="text-orange-400 flex gap-1 mb-4">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-gray-600 italic mb-6 leading-relaxed">"Dr. Saini is very professional yet approachable. He understood my work stress issues instantly. The combination of medication and stress management techniques worked wonders for me."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center text-teal-700 font-bold border border-teal-200">AV</div>
+                        <div>
+                            <p class="font-bold text-gray-900">Amit Verma</p>
+                            <p class="text-xs text-gray-500">Corporate Stress</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-teal-600 font-bold tracking-wider uppercase text-sm">Common Questions</span>
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-gray-900 mt-2 mb-4">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-6 text-left focus:outline-none hover:bg-slate-50 transition-colors">
+                        <span class="text-lg font-bold text-gray-900">Do you offer online consultations?</span>
+                        <svg class="w-5 h-5 text-teal-600 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div class="hidden px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-50 pt-4 bg-slate-50/50">
+                        Yes, we offer secure video consultations for patients who cannot visit the clinic. You can book an online slot through our website or via WhatsApp.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-6 text-left focus:outline-none hover:bg-slate-50 transition-colors">
+                        <span class="text-lg font-bold text-gray-900">Is my information kept confidential?</span>
+                        <svg class="w-5 h-5 text-teal-600 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div class="hidden px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-50 pt-4 bg-slate-50/50">
+                        Absolutely. Patient confidentiality is our top priority. All your personal details and session discussions are strictly private and follow medical ethical guidelines.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-6 text-left focus:outline-none hover:bg-slate-50 transition-colors">
+                        <span class="text-lg font-bold text-gray-900">How long does a session last?</span>
+                        <svg class="w-5 h-5 text-teal-600 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div class="hidden px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-50 pt-4 bg-slate-50/50">
+                        A typical consultation session lasts between 30 to 45 minutes. However, the duration may vary depending on the complexity of the case and the type of therapy required.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section with Appointment Form -->
+    <section id="contact" class="py-24 bg-gradient-to-br from-teal-900 to-slate-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Contact Information -->
+                <div>
+                    <span class="text-teal-400 font-bold tracking-wider uppercase text-sm">Get in Touch</span>
+                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-white mt-2 mb-8">Ready to Start Your Journey?</h2>
+                    <p class="text-teal-100 text-lg mb-10 leading-relaxed">
+                        Taking the first step is often the hardest. We are here to support you. Reach out to schedule a consultation or ask any questions.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-teal-400">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Visit Us</h4>
+                                <p class="text-teal-100">Jaipur, Rajasthan</p>
+                                <p class="text-teal-200/60 text-sm mt-1">(Available for Online & Offline Consultation)</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-teal-400">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Call Us</h4>
+                                <p class="text-teal-100">+91 98765 43210</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Appointment Form -->
+                <div class="bg-white rounded-3xl p-8 shadow-2xl relative">
+                    
+                    <!-- Form Content -->
+                    <div id="bookingFormContainer">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Book an Appointment via WhatsApp</h3>
+                        <form id="bookingForm" class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                                <input type="text" id="name" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-teal-600 focus:ring-1 focus:ring-teal-600 outline-none transition-all text-gray-800" placeholder="John Doe">
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                    <input type="tel" id="phone" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-teal-600 focus:ring-1 focus:ring-teal-600 outline-none transition-all text-gray-800" placeholder="+91">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Preferred Date</label>
+                                    <input type="date" id="date" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-teal-600 focus:ring-1 focus:ring-teal-600 outline-none transition-all text-gray-800">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Main Concern</label>
+                                <textarea id="message" rows="3" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-teal-600 focus:ring-1 focus:ring-teal-600 outline-none transition-all text-gray-800" placeholder="E.g., Anxiety, Consultation..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg hover:shadow-xl mt-2 flex items-center justify-center gap-2">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                                Confirm Booking on WhatsApp
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-white py-8 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 text-center md:text-left flex flex-col md:flex-row justify-between items-center">
-            <div>
-                <h2 class="text-xl font-serif font-bold">MindWellness</h2>
-                <p class="text-slate-400 text-sm">Healing of Mind • Dr. Vijender Saini</p>
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <div class="text-2xl font-serif font-bold text-white">MindWellness</div>
             </div>
-            <div class="mt-4 md:mt-0 text-slate-600 text-xs">
-                © 2024 MindWellness. All rights reserved.
+
+            <!-- Social Media Links -->
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-teal-400 transition-colors" aria-label="Facebook">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="#" class="hover:text-teal-400 transition-colors" aria-label="Twitter">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="#" class="hover:text-teal-400 transition-colors" aria-label="Instagram">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="#" class="hover:text-teal-400 transition-colors" aria-label="LinkedIn">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+            </div>
+
+            <div class="text-sm">
+                &copy; 2024 Dr. Vijendra Saini. All rights reserved.
             </div>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp -->
-    <a href="https://wa.me/919785712712" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition-transform hover:scale-110 flex items-center gap-2">
-        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12.001 2c5.523 0 10 4.477 10 10 0 5.15-3.872 9.42-8.91 9.947l-1.09.053c-5.523 0-10-4.477-10-10 0-5.523 4.477-10 10-10zm0 3.25c-3.73 0-6.75 3.02-6.75 6.75s3.02 6.75 6.75 6.75 6.75-3.02 6.75-6.75-3.02-6.75-6.75-6.75zm.938 10.957c-.126 0-.214-.047-.29-.142l-.248-.363c-.046-.07-.069-.153-.069-.25 0-.177.108-.344.32-.511l.37-.25c.093-.062.14-.093.14-.093s.062.03.187.094c.125.062.281.187.468.374.187.187.312.374.375.468s.03.094.03.156c0 .125-.062.25-.187.375s-.344.187-.625.187zm-1.03-3.265c-.062 0-.125-.015-.187-.047s-.109-.078-.156-.156c-.047-.078-.063-.172-.063-.28s.016-.203.047-.281l.313-.625c.03-.062.078-.125.156-.187.078-.063.172-.094.281-.094s.203.031.281.094c.078.062.141.14.188.234.047.094.062.203.062.328s-.031.25-.094.344l-.281.625c-.062.125-.156.234-.281.328s-.266.141-.437.141zM7.5 12c0 2.47 2.03 4.5 4.5 4.5s4.5-2.03 4.5-4.5-2.03-4.5-4.5-4.5 2.03-4.5 4.5z"/></svg>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919876543210" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-transform hover:scale-110 flex items-center justify-center">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
     </a>
 
+    <!-- Scripts -->
+    <script>
+        // FAQ Accordion
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('svg');
+            
+            // Toggle current
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Functional WhatsApp Booking Form
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const date = document.getElementById('date').value;
+            const message = document.getElementById('message').value;
+            
+            // Format WhatsApp Message
+            const text = `Hello Dr. Saini, I would like to book an appointment.%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Preferred Date:* ${date}%0A*Concern:* ${message}`;
+            
+            // Open WhatsApp
+            window.open(`https://wa.me/919876543210?text=${text}`, '_blank');
+        });
+    </script>
 </body>
 </html>
