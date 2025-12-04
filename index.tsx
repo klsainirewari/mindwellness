@@ -2,6 +2,20 @@ import React, { useState, useEffect, useRef } from "react";
 import { createRoot } from "react-dom/client";
 import { GoogleGenAI } from "@google/genai";
 
+// ==================================================================================
+// 🔑 API KEY CONFIGURATION (YAHAN APNI KEY DALEIN)
+// ==================================================================================
+// 1. Google AI Studio se Key lein: https://aistudio.google.com/app/apikey
+// 2. Niche "YAHA_KEY_PASTE_KAREIN" ko hatakar apni Key paste karein inside quotes.
+//    Example: const API_KEY = "AIzaSyCuevq1tKjbPOp84ZH8joHhF3bvZHEODq8";
+// 3. Security ke liye: https://console.cloud.google.com/apis/credentials par jakar
+//    Key ko restrict karein -> Websites -> https://klsainirewari.github.io/*
+// ==================================================================================
+
+const API_KEY = "AIzaSyCuevq1tKjbPOp84ZH8joHhF3bvZHEODq8; 
+
+// ==================================================================================
+
 // --- Icons (SVG Components) ---
 const Icons = {
   Menu: () => (
@@ -402,15 +416,8 @@ const ChatWidget = () => {
   const chatSessionRef = useRef<any>(null);
 
   useEffect(() => {
-    // ---------------------------------------------------------
-    // IMPORTANT: PASTE YOUR GOOGLE GEMINI API KEY BELOW
-    // REPLACE "YOUR_GEMINI_API_KEY_HERE" WITH YOUR ACTUAL KEY
-    // IF HOSTING ON GITHUB PAGES, THE KEY MUST BE HERE.
-    // ---------------------------------------------------------
-    const API_KEY = "YOUR_GEMINI_API_KEY_HERE"; 
-    
     // Check if user has replaced the placeholder
-    if (API_KEY === "YOUR_GEMINI_API_KEY_HERE" || API_KEY === "") {
+    if (API_KEY === "YAHA_KEY_PASTE_KAREIN" || API_KEY === "") {
         console.warn("API Key is missing. Please edit index.tsx and add your key.");
         setError(true);
         return;
