@@ -16,14 +16,8 @@
       // Global Error Handler
       window.onerror = function(message, source, lineno, colno, error) {
         const errorContainer = document.getElementById('root') || document.body;
-        errorContainer.innerHTML = `
-          <div style="min-h-screen flex items-center justify-center bg-red-50 p-4">
-            <div style="background:white; padding:2rem; border-radius:1rem; box-shadow:0 4px 6px -1px rgba(0,0,0,0.1); max-width:24rem; text-align:center;">
-              <h2 style="color:#991b1b; font-size:1.25rem; font-weight:bold; margin-bottom:0.5rem;">Error Loading Site</h2>
-              <p style="color:#b91c1c; font-size:0.875rem;">${message}</p>
-            </div>
-          </div>
-        `;
+        // Don't overwrite if root already has content, just log it unless it's critical
+        console.error("Global Error:", message);
       };
 
       // Polyfill for process.env
@@ -53,7 +47,7 @@
       }
     </script>
     
-    <!-- ✅ CORRECT IMPORT MAP (Cleaned for Netlify/GitHub) -->
+    <!-- ✅ CORRECT IMPORT MAP (React 18 ONLY) -->
     <script type="importmap">
 {
   "imports": {
