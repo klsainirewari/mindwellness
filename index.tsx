@@ -401,11 +401,24 @@ const ChatWidget = () => {
   const aiRef = useRef<any>(null);
   const chatSessionRef = useRef<any>(null);
 
-  // Initialize AI - Developer must set process.env.API_KEY
   useEffect(() => {
+    // ---------------------------------------------------------
+    // IMPORTANT: PASTE YOUR GOOGLE GEMINI API KEY BELOW
+    // REPLACE "YOUR_GEMINI_API_KEY_HERE" WITH YOUR ACTUAL KEY
+    // IF HOSTING ON GITHUB PAGES, THE KEY MUST BE HERE.
+    // ---------------------------------------------------------
+    const API_KEY = "YOUR_GEMINI_API_KEY_HERE"; 
+    
+    // Check if user has replaced the placeholder
+    if (API_KEY === "YOUR_GEMINI_API_KEY_HERE" || API_KEY === "") {
+        console.warn("API Key is missing. Please edit index.tsx and add your key.");
+        setError(true);
+        return;
+    }
+
     try {
-      if (process.env.API_KEY && !aiRef.current) {
-        aiRef.current = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      if (!aiRef.current) {
+        aiRef.current = new GoogleGenAI({ apiKey: API_KEY });
         chatSessionRef.current = aiRef.current.chats.create({
           model: 'gemini-2.5-flash',
           config: {
@@ -413,6 +426,7 @@ const ChatWidget = () => {
             tools: [{ googleSearch: {} }],
           }
         });
+        setError(false); // Clear error if initialization works
       }
     } catch (e) {
       console.error("AI Initialization Failed", e);
