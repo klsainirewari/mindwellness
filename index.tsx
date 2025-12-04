@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { GoogleGenAI } from "@google/genai";
 
 // ==================================================================================
-// 🔑 GITHUB PAGES CONFIGURATION (EDIT THIS AREA)
+// 🔑 GITHUB PAGES CONFIGURATION
 // ==================================================================================
 
 // Paste your Google Gemini API Key inside the quotes below:
