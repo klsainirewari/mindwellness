@@ -9,21 +9,16 @@
     <!-- Babel for GitHub Pages (Compiles React in browser) -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     
-    <!-- Added Playfair Display for Headings -->
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
     
     <script>
-      // Global Error Handler to debug "White Screen" issues visually
+      // Global Error Handler to show errors on screen instead of white page
       window.onerror = function(message, source, lineno, colno, error) {
-        console.error("Global Error:", message);
-        document.body.innerHTML = '<div style="color:#991b1b; background:#fef2f2; padding:20px; font-family:sans-serif; text-align:center; margin-top:50px;">' + 
-          '<h2 style="font-size:24px; margin-bottom:10px;">Website Error</h2>' +
-          '<p style="font-size:16px;">' + message + '</p>' +
-          '<p style="font-size:12px; color:#7f1d1d; margin-top:20px;">Check your browser console (F12) for more details.</p>' +
-          '</div>';
+        document.body.innerHTML = '<div style="color:red; padding:20px; text-align:center;"><h1>Error Occurred</h1><p>' + message + '</p></div>';
       };
 
-      // Polyfill for process.env to prevent crashes on GitHub Pages
+      // Polyfill for process.env
       if (typeof process === 'undefined') {
         window.process = { env: { NODE_ENV: 'production' } };
       }
@@ -50,8 +45,7 @@
       }
     </script>
     
-    <!-- STRICT IMPORT MAP: ONLY REACT 18 -->
-    <!-- I removed the bad lines that were causing the crash -->
+    <!-- ✅ CORRECT IMPORT MAP (React 18 ONLY) -->
     <script type="importmap">
 {
   "imports": {
