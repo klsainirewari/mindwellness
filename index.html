@@ -13,10 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
     
     <script>
-      // Global Error Handler
+      // Global Error Handler to see errors on screen instead of white page
       window.onerror = function(message, source, lineno, colno, error) {
+        document.body.innerHTML = '<div style="color:red; padding:20px; font-size:20px; font-family:sans-serif;"><h1>Application Error</h1><p>'+message+'</p></div>';
         console.error("Global Error:", message);
-        document.body.innerHTML += '<div style="color:red; padding:20px;"><h1>Error Loading Site</h1><p>' + message + '</p></div>';
       };
 
       // Polyfill for process.env
@@ -46,15 +46,15 @@
       }
     </script>
     
-    <!-- ✅ CORRECT IMPORT MAP (React 18 ONLY - CLEANED) -->
+    <!-- ✅ CORRECT IMPORT MAP (CLEANED - React 18 ONLY) -->
     <script type="importmap">
 {
   "imports": {
     "react": "https://esm.sh/react@18.2.0",
     "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
     "@google/genai": "https://esm.sh/@google/genai@0.1.1",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
-    "react/": "https://aistudiocdn.com/react@^19.2.1/"
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/"
   }
 }
 </script>
